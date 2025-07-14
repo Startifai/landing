@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slidingTextContainer {
+    position: absolute;
+    font-size: 45vh;
+    bottom: 250px;
+    white-space: nowrap;
+    color: #ffffff3a;
+    z-index: 3;
+    width: 50%;
+    font-weight: bold;
+    overflow: hidden;
+    letter-spacing: 50px;
+}
+
+/* Asumiendo que 'mobile' se refiere a pantallas de 768px o menos */
+@media (max-width: 768px) {
+    .slidingTextContainer {
+        height: 50%;
+        width: 100%;
+        top: 300px;
+        padding-top: 0;
+        bottom: 0;
+    }
+}
