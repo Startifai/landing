@@ -42,6 +42,7 @@ export const Navbar = () => {
 
     return (
         <nav className="fixed top-0 left-0 w-full z-50">
+            {/* Contenedor principal de la barra de navegación (sin la primera fila de píxeles) */}
             <div className="bg-navbar-gray">
                 <div className="flex items-center p-4">
                     <div className="px-16">
@@ -64,16 +65,17 @@ export const Navbar = () => {
                         </div>
                     </div>
                 </div>
-                {/* Fila 1: Píxeles blancos (agujeros) */}
-                <div className="flex w-full" style={{ height: '18px' }}>
-                    {pixelsRow1.map((isVisible, index) => (
-                        <div
-                            key={index}
-                            className={isVisible ? 'bg-white' : 'bg-transparent'}
-                            style={{ width: '18px', height: '18px' }}
-                        ></div>
-                    ))}
-                </div>
+            </div>
+
+            {/* Fila 1: Píxeles con agujeros transparentes */}
+            <div className="flex w-full" style={{ height: '18px' }}>
+                {pixelsRow1.map((isHole, index) => (
+                    <div
+                        key={index}
+                        className={isHole ? 'bg-transparent' : 'bg-navbar-gray'}
+                        style={{ width: '18px', height: '18px' }}
+                    ></div>
+                ))}
             </div>
 
             {/* Fila 2: Píxeles grises (goteo) */}

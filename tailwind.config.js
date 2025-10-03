@@ -12,7 +12,7 @@ module.exports = {
 
       },
       colors: {
-        'navbar-gray': '#000005CC',
+        'navbar-gray': '#000005',
       },
       boxShadow: {
         'glow-white': '0 0 15px rgba(255, 255, 255, 0.5)',
