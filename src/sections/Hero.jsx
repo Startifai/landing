@@ -40,7 +40,7 @@ export const Hero = () => {
                     </div>
                 </div>
                 <div className="flex-1 flex justify-end items-end">
-                    <img src={robot} alt="Hero Image" className="h-screen" />
+                    <img src={robot} alt="Hero" className="h-screen" />
                 </div>
             </div>
 

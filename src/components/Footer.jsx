@@ -32,7 +32,7 @@ export const Footer = () => {
                         <ul className="space-y-4">
                             {column.links.map((link) => (
                                 <li key={link}>
-                                    <a href="#" className="hover:text-white transition-colors duration-300 text-base font-light">
+                                    <a href="/home" className="hover:text-white transition-colors duration-300 text-base font-light">
                                         {link}
                                     </a>
                                 </li>
