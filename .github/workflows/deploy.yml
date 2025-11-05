@@ -1,41 +1,65 @@
-name: Deploy React App to S3 and CloudFront
+name: Deploy React Landing to S3/CloudFront
 
+# --- CAMBIO IMPORTANTE ---
+# Borramos el trigger de 'push' y añadimos 'workflow_dispatch'.
+# Esto crea un botón "Run workflow" en la pestaña Actions de GitHub.
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    # --- AÑADIMOS 'inputs' ---
+    # Esto crea el menú desplegable.
+    inputs:
+      version_to_deploy:
+        type: choice
+        description: '¿Qué versión quieres desplegar en producción?'
+        required: true
+        options: 
+        - version-1  # Opción 1 (tu landing vieja)
+        - version-2  # Opción 2 (tu landing nueva)
+        default: 'version-1'
 
 jobs:
   build-and-deploy:
-    name: Build and Deploy
     runs-on: ubuntu-latest
-
     steps:
+      # 1. Trae el código del repositorio
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          # --- CAMBIO IMPORTANTE ---
+          # Aquí le decimos a 'checkout' que baje la rama que 
+          # elegiste en el menú desplegable.
+          ref: ${{ inputs.version_to_deploy }}
 
+      # 2. Configura Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      # 3. Instala dependencias y compila
       - name: Install and Build
         run: |
           npm install
-          npm run build # Esto crea la carpeta 'build'
+          npm run build
+        # Si la carpeta de build es diferente (ej. 'dist/'), ajústala abajo.
 
+      # 4. Configura las credenciales de AWS
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: ${{ secrets.AWS_REGION }} # Asegúrate de tener este secret
 
-
+      # 5. Sube los archivos compilados a S3
       - name: Sync files to S3
         run: |
-          aws s3 sync ./build s3://${{ secrets.AWS_S3_BUCKET }} --delete
+          aws s3 sync ./build/ s3://${{ secrets.S3_BUCKET_REACT }} --delete
+        # Asegúrate que './build/' sea la carpeta de salida de tu build.
 
-   
+      # 6. Invalida la caché de CloudFront
       - name: Invalidate CloudFront Cache
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_REACT }} \
+            --paths "/*"
