@@ -94,7 +94,7 @@ function ContentFrame() {
       <div className="flex flex-col sm:flex-row gap-[8px] items-center w-full sm:w-auto">
         <a 
           href="https://app.startifai.com"
-\          className="backdrop-blur-[27px] bg-[#f57b52] h-[69px] px-[56px] rounded-[90px] border border-white shadow-[0px_4px_14px_0px_rgba(0,0,0,0.25)] hover:bg-[#e56a42] transition-colors w-full sm:w-auto"
+          className="backdrop-blur-[27px] bg-[#f57b52] h-[69px] px-[56px] rounded-[90px] border border-white shadow-[0px_4px_14px_0px_rgba(0,0,0,0.25)] hover:bg-[#e56a42] transition-colors w-full sm:w-auto"
         >
           <p className="font-['Parkinsans',_sans-serif] font-semibold text-[18px] text-center text-white tracking-[1.8px] whitespace-nowrap">
             ¡Empeza gratis ahora!
