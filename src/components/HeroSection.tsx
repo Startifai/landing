@@ -92,14 +92,14 @@ function ContentFrame() {
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-[8px] items-center w-full sm:w-auto">
-        <button 
-          onClick={() => window.dispatchEvent(new Event('openAuthModal'))}
-          className="backdrop-blur-[27px] bg-[#f57b52] h-[69px] px-[56px] rounded-[90px] border border-white shadow-[0px_4px_14px_0px_rgba(0,0,0,0.25)] hover:bg-[#e56a42] transition-colors w-full sm:w-auto"
+        <a 
+          href="https://app.startifai.com"
+\          className="backdrop-blur-[27px] bg-[#f57b52] h-[69px] px-[56px] rounded-[90px] border border-white shadow-[0px_4px_14px_0px_rgba(0,0,0,0.25)] hover:bg-[#e56a42] transition-colors w-full sm:w-auto"
         >
           <p className="font-['Parkinsans',_sans-serif] font-semibold text-[18px] text-center text-white tracking-[1.8px] whitespace-nowrap">
             ¡Empeza gratis ahora!
           </p>
-        </button>
+        </a>
         
         <button className="backdrop-blur-[27px] bg-[rgba(255,255,255,0.2)] h-[69px] px-[56px] rounded-[90px] border border-[#ff6a00] shadow-[0px_4px_14px_0px_rgba(0,0,0,0.25)] hover:bg-[rgba(255,255,255,0.3)] transition-colors w-full sm:w-auto">
           <p className="font-['Parkinsans',_sans-serif] font-semibold text-[18px] text-center text-[#ff6a00] tracking-[1.8px] whitespace-nowrap">

@@ -15,7 +15,7 @@ function ActionButton({ text, href = "#" }: { text: string; href?: string }) {
   const handleClick = (e: React.MouseEvent) => {
     if (text === "Empezar") {
       e.preventDefault();
-      window.dispatchEvent(new Event('openAuthModal'));
+      window.location.href = "https://www.app.startifai.com";
     }
   };
   

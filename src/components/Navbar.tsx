@@ -132,12 +132,12 @@ function MenuContent({ onClose }: { onClose: () => void }) {
 
       {/* Footer CTA */}
       <div className="p-6 border-t border-[#414147] bg-[rgba(255,255,255,0.02)]">
-        <button 
-          onClick={onClose}
+        <a 
+          href="https://app.startifai.com"
           className="w-full px-6 py-4 bg-[#FF6A00] text-white rounded-xl font-['Parkinsans',_sans-serif] hover:bg-[#ff7a1a] transition-all shadow-[0_4px_20px_rgba(255,106,0,0.4)] hover:shadow-[0_6px_30px_rgba(255,106,0,0.6)] transform hover:scale-[1.02]"
         >
           Crear cuenta gratis
-        </button>
+        </a>
         <p className="text-center text-xs text-gray-500 mt-3 font-['Parkinsans',_sans-serif]">
           30 días gratis • Sin tarjeta de crédito
         </p>
@@ -209,12 +209,12 @@ export function Navbar() {
 
           {/* Desktop CTA + Menu */}
           <div className="hidden lg:flex items-center gap-4">
-            <button 
-              onClick={() => window.dispatchEvent(new Event('openAuthModal'))}
-              className="relative backdrop-blur-[5px] bg-[rgba(255,255,255,0.05)] border border-[#414147] h-[45px] px-6 rounded-[90px] text-[14px] text-white font-['Parkinsans',_sans-serif] font-medium tracking-[0.28px] hover:bg-[rgba(255,255,255,0.1)] transition-colors"
+            <a 
+              href="https://app.startifai.com"
+              className="relative backdrop-blur-[5px] bg-[rgba(255,255,255,0.05)] border border-[#414147] h-[45px] px-6 rounded-[90px] text-[14px] text-white font-['Parkinsans',_sans-serif] font-medium tracking-[0.28px] hover:bg-[rgba(255,255,255,0.1)] transition-colors inline-flex items-center"
             >
               Ingresar
-            </button>
+            </a>
             
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
