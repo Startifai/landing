@@ -158,9 +158,9 @@ export function UniversoIaSection() {
   };
 
   const solutionsServices = [
-    { title: "Onboarding de ventas", category: "E-commerce", price: "$109.99", fit: "Ankle-length", image: imgShape },
-    { title: "Onboarding de citas", category: "Womenswear", price: "$54.99", fit: "Slim Fit", image: imgShape1 },
-    { title: "Onboarding de atención", category: "Womenswear", price: "$89.99", fit: "Flowing skirt", image: imgShape2 },
+    { title: "Onboarding de Completo", category: "E-commerce", price: "$109.99", fit: "Ankle-length", image: imgShape },
+    { title: "Onboarding de citas", category: "E-commerce", price: "$54.99", fit: "Slim Fit", image: imgShape1 },
+    { title: "Onboarding de consultas", category: "E-commerce", price: "$89.99", fit: "Flowing skirt", image: imgShape2 },
   ];
 
   const advisoryServices = [
@@ -203,7 +203,7 @@ export function UniversoIaSection() {
                 </div>
                 
                 {/* Tabs */}
-                <div className="content-stretch flex gap-[14px] items-center relative shrink-0 flex-wrap">
+                {/* <div className="content-stretch flex gap-[14px] items-center relative shrink-0 flex-wrap">
                   <div 
                     onClick={() => handleTabClick("ventas")}
                     className={`box-border content-stretch flex gap-[10px] items-center px-[24px] py-[18px] relative rounded-[12px] shrink-0 transition-colors cursor-pointer ${
@@ -248,7 +248,7 @@ export function UniversoIaSection() {
                       activeTab === "todas" ? "text-white" : "text-[#b3b3b2]"
                     }`}>Todas</p>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Abstract Design */}
                 <div className="absolute flex h-[calc(1px*((425.390625*0.34784549474716187)+(446*0.9375518560409546)))] items-center justify-center right-[-199.69px] top-1/2 translate-y-[-50%] w-[calc(1px*((446*0.34784549474716187)+(425.390625*0.9375518560409546)))]">
@@ -282,7 +282,7 @@ export function UniversoIaSection() {
             </div>
           </div>
 
-          {/* Asesorías Section */}
+          {/* Asesorías Section
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
             <div className="relative shrink-0 w-full">
               <div className="flex flex-row items-center size-full border-b-2 border-dashed border-neutral-800">
@@ -300,16 +300,16 @@ export function UniversoIaSection() {
                 <ServiceCard key={index} {...service} />
               ))}
             </div>
-          </div>
+          </div> */}
 
-          {/* Otros Servicios Section */}
+          {/* Otros Servicios Section
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
             <div className="content-stretch flex items-start relative shrink-0 w-full">
               {otherServices.map((service, index) => (
                 <ServiceCard key={index} {...service} />
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
