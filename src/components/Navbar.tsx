@@ -46,7 +46,7 @@ function MenuContent({ onClose }: { onClose: () => void }) {
     { label: "Problema", href: "#problema" },
     { label: "Servicios", href: "#servicios" },
     { label: "Experiencia Visual", href: "#visual" },
-    { label: "Universo IA", href: "#marketplace" },
+    { label: "Tienda", href: "#marketplace" },
   ];
 
   return (
