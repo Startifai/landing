@@ -83,7 +83,7 @@ export function Footer() {
                   href="#marketplace"
                   className="block px-4 py-3 text-black hover:bg-[rgba(0,0,0,0.05)] rounded-lg transition-colors font-['Parkinsans',_sans-serif] text-[18px]"
                 >
-                  Universo IA
+                  Tienda
                 </a>
               </nav>
             </div>

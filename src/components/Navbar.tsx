@@ -161,7 +161,7 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Nosotros", value: "nosotros", href: "#features" },
-    { label: "Universo IA", value: "universo", href: "#marketplace" },
+    { label: "Tienda", href: "#marketplace" },
   ];
 
   return (
